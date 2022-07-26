@@ -16,7 +16,11 @@ const GoalInput = (props) => {
   };
 
   const addGoalHandler = () => {
-    props.onAddGoal(enteredGoalText);
+    const checkEnteredGoalText = enteredGoalText.replace(/\s/g, "");
+    if (checkEnteredGoalText) {
+      props.onAddGoal(enteredGoalText);
+    }
+
     setEnteredGoalText("");
   };
 
